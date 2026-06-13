@@ -1,0 +1,50 @@
+# GitHub Actions workflow — builds QuoteGenerator.exe AND a real Windows
+# installer (QuoteGenerator-Setup.exe) in the cloud.
+
+name: Build Windows app
+
+on:
+  workflow_dispatch:        # run it manually from the Actions tab
+  push:
+    branches: [main]        # ...and automatically on every update
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pandas openpyxl python-pptx pyinstaller
+
+      - name: Build the exe (templates embedded inside)
+        run: >
+          pyinstaller --noconfirm --clean --onefile --windowed
+          --name QuoteGenerator
+          --add-data "Proposal  PERSONAL AUTO 23mar2026.pptx;."
+          --add-data "HO3 Proposal 01july2026.pptx;."
+          --add-data "ho3_mapping.json;."
+          app.py
+
+      - name: Build the installer (Inno Setup)
+        run: |
+          choco install innosetup --no-progress -y
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer.iss
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: QuoteGenerator-Setup
+          path: installer-output/QuoteGenerator-Setup.exe
+
+      - name: Upload portable exe
+        uses: actions/upload-artifact@v4
+        with:
+          name: QuoteGenerator-exe
+          path: dist/QuoteGenerator.exe
