@@ -1,0 +1,39 @@
+{
+  "_README": [
+    "HO3 text-replacement map, finalized from the actual template text.",
+    "KEY = exact text in the template; VALUE = JotForm field name or token.",
+    "",
+    "NOT listed here on purpose: the coverage tables, premium summary row,",
+    "and locations table on slides 4-5. Those reuse identical sample values",
+    "for different fields ($ 153,700, Chaucer, $ 500,000, EXCL...) and are",
+    "filled by column header in code (_fill_ho3_tables in",
+    "proposal_generator.py), which runs BEFORE this text pass.",
+    "Replacing 'FL' as text is also avoided deliberately - it would corrupt",
+    "the 'FL License #L106686' footer on every slide.",
+    "",
+    "Note: 'Holly White' becomes the client name everywhere, including the",
+    "Named Insureds box on slide 2. If multiple named insureds are needed",
+    "there as separate lines, that box needs a structural fill like the",
+    "Auto template's - ask for it when it becomes a real need."
+  ],
+
+  "Holly White": "__client__",
+  "June 3, 2026": "__date__",
+  "John H. Vratsinas": "Lead Producer",
+  "18457 SE Sea Oaks Lane": "Street",
+
+  "$ 9,156": "New Premium",
+  "$ 9,218": "Current Annual Premium",
+  "$ 8,484": "Wind Premium",
+  "$ 3,473": "Flood Premium",
+  "$ 1,143": "Flood Contents Premium",
+  "$ 250,000": "Flood Contents Limit",
+  "$ 1,670,000": "Flood Building Limit",
+  "$1,567,740": "Home Replacement Cost",
+  "$ 17,640": "__ho3_total_fire_wind__",
+  "$ 21,113": "__ho3_total_all__",
+
+  "7/18/2026": "Policy Date",
+  "Chaucer": "New Carrier",
+  "A (Excellent)": "A.M. Best Rating"
+}

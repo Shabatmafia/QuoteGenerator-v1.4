@@ -1,0 +1,83 @@
+Paste this into JotForm's AI form builder to create the Homeowners (HO3) form.
+The field labels MUST stay exactly as written — the desktop app matches the
+Excel export's column headers letter for letter.
+
+----------------------------------------------------------------------
+
+Create an internal form for insurance agency staff called "Homeowners (HO3)
+Insurance Proposal Form". It is filled out by an agent, not a customer.
+Use the EXACT field labels below, in this order, because a downstream system
+reads the Excel export by these column names. Do not rename, merge, or add
+words to any label.
+
+Section 1 — Proposal Details
+1. "Proposal Date" — date picker
+2. "Client Name" — short text, required
+3. "Lead Producer" — short text
+4. "Secondary Producer" — short text
+5. "Named Insureds" — short text (instruction below the field: "Separate
+   multiple names with commas")
+6. "LOB" — short text, pre-filled default value: Homeowners (HO3)
+7. "Policy Date" — date picker
+
+Section 2 — Property Address
+8. "Street" — short text
+9. "City" — short text
+10. "State" — short text
+11. "ZIP" — short text
+
+Section 3 — Current Policy (expiring)
+12. "Expiring Carrier" — short text
+13. "Current Dwelling Limit" — short text
+14. "Current Other Structures Limit" — short text
+15. "Current Personal Property Limit" — short text
+16. "Current Loss of Use Limit" — short text
+17. "Current Personal Liability Limit" — short text
+18. "Current Medical Payments Limit" — short text
+19. "Current AOP Deductible" — short text
+20. "Current Hurricane Deductible" — short text
+21. "Current Annual Premium" — short text
+
+Section 4 — Proposed New Policy
+22. "New Carrier" — short text
+23. "New Dwelling Limit" — short text
+24. "New Other Structures Limit" — short text
+25. "New Personal Property Limit" — short text
+26. "New Loss of Use Limit" — short text
+27. "New Personal Liability Limit" — short text
+28. "New Medical Payments Limit" — short text
+29. "New AOP Deductible" — short text
+30. "New Hurricane Deductible" — short text
+31. "New Premium" — short text
+32. "A.M. Best Rating" — short text
+33. "Billing Method" — short text
+
+Section 5 — Wind & Flood Options (leave blank if not quoted)
+34. "Wind Premium" — short text (instruction: "Additional annual premium to
+    add wind coverage")
+35. "Flood Premium" — short text (instruction: "Additional annual premium to
+    add flood coverage")
+36. "Flood Contents Premium" — short text
+37. "Flood Building Limit" — short text
+38. "Flood Contents Limit" — short text
+39. "Home Replacement Cost" — short text (instruction: "Estimated
+    replacement cost, e.g. $1,567,740")
+
+Section 6 — Images (all optional)
+40. "Cover Photo" — file upload, images only (instruction: "Optional photo
+    for the proposal's front page")
+41. "New Carrier Logo" — file upload, images only (instruction: "Optional
+    logo of the proposed carrier")
+42. "Expiring Carrier Logo" — file upload, images only (instruction:
+    "Optional logo of the current/expiring carrier")
+
+Keep the form single-page or with simple sections. No payment fields, no
+signature, no conditional logic.
+
+----------------------------------------------------------------------
+
+After building, do one test submission and download the Excel export
+(Submissions -> Download -> Excel). Check that the column headers match the
+labels above; JotForm sometimes appends things like "(Date)" — if so, edit
+the field label until the export header is exact. Limits/deductibles are
+text fields on purpose, so agents can type values like "$500,000" or "2%".
